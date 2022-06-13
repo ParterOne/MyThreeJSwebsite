@@ -1,0 +1,33 @@
+canvas{
+  position: absolute;
+  z-index: 1;
+}
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index:3;
+}
+
+ul {
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
