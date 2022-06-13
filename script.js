@@ -8,7 +8,7 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
-  alpha: false
+  alpha: true
 });
 
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -33,8 +33,8 @@ const mouse = {
 function onMouseMove( event ) {
     var mouseX = window.innerWidth / 2 - event.clientX;
     var mouseY = window.innerHeight / 2 - event.clientY;
-    torus.rotation.y = Math.PI*2*mouseX/window.innerWidth;
-    torus.rotation.x = -Math.PI*2*mouseY/window.innerHeight;
+    torus.rotation.y = Math.PI*.5*mouseX/window.innerWidth;
+    torus.rotation.x = -Math.PI*.5*mouseY/window.innerHeight;
     torus.updateMatrix();
 }   
 
@@ -44,4 +44,3 @@ function animate(){
 }
 
 animate()
-
