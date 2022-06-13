@@ -18,21 +18,30 @@ camera.position.setZ(30);
 
 const geometry = new THREE.TorusGeometry(10, 3, 16, 100)
 const material = new THREE.MeshBasicMaterial({ color: 0xFF6347,side: THREE.DoubleSide, wireframe: true});
-const torusA = new THREE.Mesh(geometry, material);
+const torus = new THREE.Mesh(geometry, material);
 
-scene.add(torusA)
+scene.add(torus)
 
 const mouse = {
 	x: undefined,
 	y: undefined
 }
 
+    document.addEventListener( 'mousemove', onMouseMove, false );
+
+
+function onMouseMove( event ) {
+    var mouseX = window.innerWidth / 2 - event.clientX;
+    var mouseY = window.innerHeight / 2 - event.clientY;
+    torus.rotation.y = Math.PI*2*mouseX/window.innerWidth;
+    torus.rotation.x = -Math.PI*2*mouseY/window.innerHeight;
+    torus.updateMatrix();
+}   
+
 function animate(){
   requestAnimationFrame(animate);
-  torusA.rotation.x += 0.01;
-  torusA.rotation.y += 0.005;
-  torusA.rotation.y += 0.01;
   renderer.render(scene, camera);
 }
 
 animate()
+
