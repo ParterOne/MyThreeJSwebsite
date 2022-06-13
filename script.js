@@ -33,8 +33,8 @@ const mouse = {
 function onMouseMove( event ) {
     var mouseX = window.innerWidth / 2 - event.clientX;
     var mouseY = window.innerHeight / 2 - event.clientY;
-    torus.rotation.y = Math.PI*.5*mouseX/window.innerWidth;
-    torus.rotation.x = -Math.PI*.5*mouseY/window.innerHeight;
+    torus.rotation.y = Math.PI*1*-mouseX/window.innerWidth;
+    torus.rotation.x = -Math.PI*1*mouseY/window.innerHeight;
     torus.updateMatrix();
 }   
 
